@@ -177,22 +177,38 @@ const CARD_CATEGORIES = {
 
 let controlButtons = document.querySelectorAll("[data-card-category]");
 let cardsContainer = document.querySelector("[data-cards-container]");
+let cardBackground = document.querySelector("[data-card-background]");
 
-controlButtons.forEach((button) => {
+function renderCards(category) {
+    const cards = CARD_CATEGORIES[category];
+
+    cardsContainer.innerHTML = "";
+    cards.forEach((card) => {
+        let cardEl = document.createElement("div");
+        cardEl.classList.add("card");
+        cardEl.innerHTML = `
+                <p>${card.title}</p>
+                <p>${card.subtitle}</p>
+              `
+        cardEl.style.backgroundImage = `url(${card.image})`
+        cardsContainer.appendChild(cardEl)
+    })
+}
+
+function updateActiveCategory(activeButton, activeIndex) {
+    controlButtons.forEach((button) => {
+        button.classList.toggle("active", button === activeButton);
+    })
+
+    cardBackground.style.left = `${activeIndex * (100 / controlButtons.length)}%`;
+}
+
+controlButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-        const category = button.dataset.cardCategory;
-        const cards = CARD_CATEGORIES[category];
-
-        cardsContainer.innerHTML = "";
-        cards.forEach((card) => {
-            let cardEl = document.createElement("div");
-            cardEl.classList.add("card");
-            cardEl.innerHTML = `
-                    <p>${card.title}</p>
-                    <p>${card.subtitle}</p>
-                  `
-            cardEl.style.backgroundImage = `url(${card.image})`
-            cardsContainer.appendChild(cardEl)
-        })
+        updateActiveCategory(button, index);
+        renderCards(button.dataset.cardCategory);
     })
 })
+
+updateActiveCategory(controlButtons[0], 0);
+renderCards("all");

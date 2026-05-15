@@ -181,6 +181,7 @@ nav {
   }
 }
 .hero {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -190,8 +191,8 @@ nav {
     "main main main main sidebar"
     "left left right right sidebar"
     "left left right right sidebar";
-  padding-top: var(--nav-height);
-  height: calc(100vh - var(--nav-height));
+  padding: var(--nav-height) 48px 0;
+  height: 100vh;
   width: 100%;
   gap: 12px;
   div {
@@ -220,8 +221,16 @@ nav {
 .services {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 80px 48px;
+  box-sizing: border-box;
+}
+.services > div,
+.cards {
+  width: 100%;
+  max-width: 1140px;
 }
 .segmented-control {
   display: flex;
@@ -242,6 +251,12 @@ nav {
     height: 100%;
     z-index: 2;
     font-size: 16px;
+    transition: background 0.2s ease-in-out;
+    &[data-card-category]:not(.active):hover,
+    &[data-offer-category]:not(.active):hover {
+      background: rgba(0, 0, 0, 0.08);
+      border-radius: 100px;
+    }
     &:is(.active) {
       color: #ffffff;
     }
@@ -259,6 +274,84 @@ nav {
   }
 }
 
+.offers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 48px;
+}
+
+.offers h2 {
+  width: 100%;
+  max-width: 1140px;
+  font-size: 48px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #202124;
+}
+
+.offers-menu {
+  width: 100%;
+  max-width: 1140px;
+  div:last-of-type {
+    width: calc(100% / 6);
+  }
+}
+
+.offers-layout {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 1140px;
+  min-height: 520px;
+}
+
+.offer-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  gap: 24px;
+  min-width: 0;
+}
+
+.offer-card {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: space-between;
+  padding: 32px;
+  border-radius: 32px;
+  background: #e8edff;
+  color: #202124;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.offer-card h3 {
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.offer-card:has(.offer-arrow) {
+  align-items: center;
+}
+
+.offer-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 48px;
+  border-radius: 100px;
+  background: #ffffff;
+  font-size: 32px;
+}
+
 .cards {
   display: flex;
   flex-direction: row;
@@ -269,12 +362,17 @@ nav {
   display: flex;
   flex-direction: column;
   align-content: center;
-  width: 267px;
-  padding: 32px;
-  border-radius: 32px;
-  height: 298px;
+  width: 200px;
+  padding: 30px;
+  border-radius: 30px;
+  height: 280px;
   background: red;
   background-size: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.02);
+  }
   p {
     text-align: center;
   }
