@@ -44,11 +44,11 @@ let aboutBackground = document.querySelector("[data-about-background]");
 
 function createAboutCard(card, grow, isMain) {
     let cardEl = document.createElement("div");
-    cardEl.classList.add("about-card");
+    cardEl.classList.add("item");
     cardEl.style.flexGrow = grow;
 
     if (isMain) {
-        cardEl.classList.add("about-card-main");
+        cardEl.classList.add("main");
     }
 
     let titleEl = document.createElement("h3");
@@ -66,7 +66,7 @@ function renderAbout(category) {
 
     layout.forEach((column, columnIndex) => {
         let columnEl = document.createElement("div");
-        columnEl.classList.add("about-column");
+        columnEl.classList.add("col");
         columnEl.style.flexGrow = ABOUT_COLUMN_GROW[category]?.[columnIndex] || 1;
 
         column.forEach((cardIndex, rowIndex) => {

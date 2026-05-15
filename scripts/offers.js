@@ -118,7 +118,7 @@ let offerBackground = document.querySelector("[data-offer-background]");
 
 function createOfferCard(offer, isAction, grow) {
     let offerEl = document.createElement("div");
-    offerEl.classList.add("offer-card");
+    offerEl.classList.add("item");
     offerEl.style.flexGrow = grow;
 
     let titleEl = document.createElement("h3");
@@ -127,7 +127,7 @@ function createOfferCard(offer, isAction, grow) {
 
     if (isAction) {
         let arrowEl = document.createElement("div");
-        arrowEl.classList.add("offer-arrow");
+        arrowEl.classList.add("arrow");
         arrowEl.textContent = "→";
         offerEl.appendChild(arrowEl);
     }
@@ -145,7 +145,7 @@ function renderOffers(category) {
 
     layout.forEach((column, columnIndex) => {
         let columnEl = document.createElement("div");
-        columnEl.classList.add("offer-column");
+        columnEl.classList.add("col");
         columnEl.style.flexGrow = OFFER_COLUMN_GROW[category]?.[columnIndex] || 1;
 
         column.forEach((offerIndex, rowIndex) => {
