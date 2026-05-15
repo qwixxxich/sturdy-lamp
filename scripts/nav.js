@@ -1,4 +1,4 @@
-const navigationData = {
+let navigationData = {
   "private-clients": [
     {
       title: "Карты",

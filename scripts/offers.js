@@ -1,4 +1,4 @@
-const OFFER_CATEGORIES = {
+let OFFER_CATEGORIES = {
     mobile: [
         {
             title: "Альфа-выгодная связь",
@@ -79,7 +79,7 @@ const OFFER_CATEGORIES = {
     ],
 };
 
-const OFFER_LAYOUTS = {
+let OFFER_LAYOUTS = {
     mobile: [[0], [1, 2]],
     travel: [[0, 1], [2, 3], [4, 5]],
     events: [[0, 1], [2]],
@@ -88,7 +88,7 @@ const OFFER_LAYOUTS = {
     insurance: [[0], [1, 2]],
 };
 
-const OFFER_ACTION_INDEX = {
+let OFFER_ACTION_INDEX = {
     mobile: 2,
     travel: 3,
     events: 1,
@@ -97,13 +97,13 @@ const OFFER_ACTION_INDEX = {
     insurance: 2,
 };
 
-const OFFER_COLUMN_GROW = {
+let OFFER_COLUMN_GROW = {
     mobile: [1, 1.5],
     travel: [1, 2, 1],
     insurance: [1, 1.45],
 };
 
-const OFFER_CARD_GROW = {
+let OFFER_CARD_GROW = {
     mobile: [[1], [8, 1]],
     travel: [[1, 1], [8, 1], [1, 1]],
     events: [[8, 1], [1]],
@@ -136,9 +136,9 @@ function createOfferCard(offer, isAction, grow) {
 }
 
 function renderOffers(category) {
-    const offers = OFFER_CATEGORIES[category];
-    const layout = OFFER_LAYOUTS[category];
-    const actionIndex = OFFER_ACTION_INDEX[category];
+    let offers = OFFER_CATEGORIES[category];
+    let layout = OFFER_LAYOUTS[category];
+    let actionIndex = OFFER_ACTION_INDEX[category];
 
     offersContainer.innerHTML = "";
     offersContainer.dataset.offerLayout = category;

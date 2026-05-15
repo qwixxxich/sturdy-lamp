@@ -1,4 +1,4 @@
-const CARD_CATEGORIES = {
+let CARD_CATEGORIES = {
     all: [
         {
             title: "test1",
