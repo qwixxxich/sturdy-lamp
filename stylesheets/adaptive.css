@@ -1,0 +1,142 @@
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas:
+      "main main"
+      "left right"
+      "sidebar sidebar";
+  }
+
+  .segmented-control {
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+  }
+
+  .segmented-control .tab {
+    flex: 1 1 180px;
+    min-height: 48px;
+  }
+
+  .segmented-control .bg {
+    display: none;
+  }
+
+  .segmented-control .tab.active {
+    background: var(--dark-grey);
+    border-radius: 100px;
+  }
+
+  .segmented-control .tab.active:hover {
+    background: var(--dark-grey);
+  }
+
+  .offers .grid,
+  .about .grid,
+  .tools .grid,
+  .cashback {
+    flex-direction: column;
+  }
+
+  .offers .grid,
+  .about .grid,
+  .tools .grid {
+    min-height: 0;
+  }
+
+  .offers .col,
+  .about .col,
+  .tools .col {
+    flex: none;
+  }
+
+  .offers .item {
+    min-height: 180px;
+  }
+
+  .offers .item:has(.arrow) {
+    min-height: 96px;
+  }
+
+  .about .item,
+  .tools .item {
+    min-height: 150px;
+  }
+
+  .about .main,
+  .tools .currency {
+    min-height: 320px;
+  }
+
+  .tools .grid,
+  .cashback {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .about .top {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .about .tabs {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero,
+  .services,
+  .offers,
+  .about {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .tools,
+  .cashback {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, minmax(160px, 1fr));
+    grid-template-areas:
+      "main"
+      "left"
+      "right"
+      "sidebar";
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .offers h2,
+  .about h2,
+  .tools h2 {
+    font-size: 36px;
+  }
+
+  .cashback .text,
+  .offers .item,
+  .about .item,
+  .tools .item {
+    padding: 24px;
+  }
+
+  .cashback h2 {
+    font-size: 32px;
+  }
+
+  .cards {
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 280px;
+  }
+}

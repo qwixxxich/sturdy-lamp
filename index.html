@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script src="scripts/nav.js" defer></script>
     <script src="scripts/cards_c.js" defer></script>
+    <script src="scripts/card_images.js" defer></script>
     <script src="scripts/offers.js" defer></script>
     <script src="scripts/about.js" defer></script>
   </head>
@@ -63,10 +64,10 @@
       <div>
         <h2></h2>
         <div class="segmented-control">
-          <div class="active" data-card-category="all">Для всех</div>
-          <div data-card-category="small-business">Малому бизнесу</div>
-          <div data-card-category="large-business">Крупному бизнесу</div>
-          <div data-card-background></div>
+          <div class="tab active" data-card-category="all">Для всех</div>
+          <div class="tab" data-card-category="small-business">Малому бизнесу</div>
+          <div class="tab" data-card-category="large-business">Крупному бизнесу</div>
+          <div class="bg" data-card-background></div>
         </div>
       </div>
       <div class="cards" data-cards-container></div>
@@ -148,13 +149,13 @@
     <section class="offers">
       <h2>Пользуйтесь выгодными предложениями в наших сервисах</h2>
       <div class="segmented-control tabs">
-        <div class="active" data-offer-category="mobile">Альфа-Мобайл</div>
-        <div data-offer-category="travel">Альфа-Тревел</div>
-        <div data-offer-category="events">Афиша</div>
-        <div data-offer-category="fuel">Заправки</div>
-        <div data-offer-category="share">Подели</div>
-        <div data-offer-category="insurance">Страхование</div>
-        <div data-offer-background></div>
+        <div class="tab active" data-offer-category="mobile">Альфа-Мобайл</div>
+        <div class="tab" data-offer-category="travel">Альфа-Тревел</div>
+        <div class="tab" data-offer-category="events">Афиша</div>
+        <div class="tab" data-offer-category="fuel">Заправки</div>
+        <div class="tab" data-offer-category="share">Подели</div>
+        <div class="tab" data-offer-category="insurance">Страхование</div>
+        <div class="bg" data-offer-background></div>
       </div>
       <div class="grid" data-offers-container></div>
     </section>
@@ -162,9 +163,9 @@
       <div class="top">
         <h2>О банке</h2>
         <div class="segmented-control tabs">
-          <div class="active" data-about-category="achievements">Достижения</div>
-          <div data-about-category="career">Работа в Альфе</div>
-          <div data-about-background></div>
+          <div class="tab active" data-about-category="achievements">Достижения</div>
+          <div class="tab" data-about-category="career">Работа в Альфе</div>
+          <div class="bg" data-about-background></div>
         </div>
       </div>
       <div class="grid" data-about-container></div>

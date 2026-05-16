@@ -2,23 +2,29 @@ let ABOUT_CATEGORIES = {
     achievements: [
         {
             title: "Альфа-Банк — лучший работодатель России",
+            image: "assets/images/1.jpg",
         },
         {
             title: "Крупнейший частный банк",
+            image: "assets/images/2.jpg",
         },
         {
             title: "Отзывы",
+            image: "assets/images/3.jpeg",
         },
     ],
     career: [
         {
             title: "Альфа-Будущее",
+            image: "assets/images/4.jpeg",
         },
         {
             title: "Вакансии в Альфа-Банке",
+            image: "assets/images/5.jpeg",
         },
         {
             title: "Свой в Альфе",
+            image: "assets/images/6.jpeg",
         },
     ],
 };
@@ -46,6 +52,7 @@ function createAboutCard(card, grow, isMain) {
     let cardEl = document.createElement("div");
     cardEl.classList.add("item");
     cardEl.style.flexGrow = grow;
+    setCardImage(cardEl, card.image);
 
     if (isMain) {
         cardEl.classList.add("main");

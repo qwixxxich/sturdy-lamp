@@ -2,79 +2,101 @@ let OFFER_CATEGORIES = {
     mobile: [
         {
             title: "Альфа-выгодная связь",
+            image: "assets/images/1.jpg",
         },
         {
             title: "Безлимитный интернет",
+            image: "assets/images/2.jpg",
         },
         {
             title: "Оформить сим",
+            image: "assets/images/3.jpeg",
         },
     ],
     travel: [
         {
             title: "От 5% до 10% на авиабилеты",
+            image: "assets/images/4.jpeg",
         },
         {
             title: "10% за туры",
+            image: "assets/images/5.jpeg",
         },
         {
             title: "Билеты с кэшбэком в Альфа-Тревел",
+            image: "assets/images/6.jpeg",
         },
         {
             title: "В путешествие",
+            image: "assets/images/7.jpg",
         },
         {
             title: "10% за ж/д билеты",
+            image: "assets/images/1.jpg",
         },
         {
             title: "10% за отели",
+            image: "assets/images/2.jpg",
         },
     ],
     events: [
         {
             title: "Персональные подборки и скидки",
+            image: "assets/images/3.jpeg",
         },
         {
             title: "Купить билет",
+            image: "assets/images/4.jpeg",
         },
         {
             title: "Культурная жизнь в новом сервисе Афиша",
+            image: "assets/images/5.jpeg",
         },
     ],
     fuel: [
         {
             title: "Без очередей и кассиров",
+            image: "assets/images/6.jpeg",
         },
         {
             title: "Найти заправку",
+            image: "assets/images/7.jpg",
         },
         {
             title: "Кэшбэк до 7% на АЗС",
+            image: "assets/images/1.jpg",
         },
     ],
     share: [
         {
             title: "Забирайте покупки за 1/4 цены",
+            image: "assets/images/2.jpg",
         },
         {
             title: "Никаких переплат",
+            image: "assets/images/3.jpeg",
         },
         {
             title: "40 000 магазинов",
+            image: "assets/images/4.jpeg",
         },
         {
             title: "Скидки от партнёров",
+            image: "assets/images/5.jpeg",
         },
     ],
     insurance: [
         {
             title: "Страховой полис онлайн",
+            image: "assets/images/6.jpeg",
         },
         {
             title: "Страхование для всех",
+            image: "assets/images/7.jpg",
         },
         {
             title: "Выбрать свой полис",
+            image: "assets/images/1.jpg",
         },
     ],
 };
@@ -120,6 +142,7 @@ function createOfferCard(offer, isAction, grow) {
     let offerEl = document.createElement("div");
     offerEl.classList.add("item");
     offerEl.style.flexGrow = grow;
+    setCardImage(offerEl, offer.image);
 
     let titleEl = document.createElement("h3");
     titleEl.textContent = offer.title;
