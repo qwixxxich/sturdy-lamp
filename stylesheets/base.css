@@ -501,10 +501,11 @@ nav {
   min-height: 0;
 }
 
-.tools .item {
+.tools .item:not(.currency) {
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
+  text-align: center;
 }
 
 .tools .item p {
